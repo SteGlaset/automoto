@@ -1,0 +1,12 @@
+footer#footer
+    .container
+        h4 Автошкола "АвтоМото"
+        ul.contacts
+            li.contacts__li Время работы
+                = " " + workTime
+            li.contacts__li Телефон
+                a(href=`tel:${phone.notFormatted}`)= " " + phone.formatted
+            li.contacts__li Email
+                a(href=`mailto:${mail}`)= " " + mail
+            li.contacts__li
+                a.social__link

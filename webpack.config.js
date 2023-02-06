@@ -1,6 +1,12 @@
 //webpack.config.js
 const path = require('path');
-const PugPlugin = require ('pug-plugin');
+const glob = require("glob");
+const PugPlugin = require('pug-plugin');
+const { PurgeCSSPlugin } = require("purgecss-webpack-plugin");
+
+const PATHS = {
+    src: path.join(__dirname, "src"),
+};
 
 module.exports = {
     entry: {
@@ -8,7 +14,6 @@ module.exports = {
     },
     output: {
         path: path.join(__dirname, 'dist/'),
-        publicPath: '/',
         filename: 'js/[name].[contenthash:8].js'
     },
     plugins: [
@@ -17,6 +22,9 @@ module.exports = {
             css: {
                 filename: 'css/[name].[contenthash:8].css'
             }
+        }),
+        new PurgeCSSPlugin({
+            paths: glob.sync(`${PATHS.src}/**/*`, { nodir: true }),
         })
     ],
     module: {
@@ -26,35 +34,55 @@ module.exports = {
                 loader: PugPlugin.loader
             },
             {
-                test: /\.(css|sass|scss)$/,
-                use: ['css-loader', 'sass-loader']
+                test: /\.(css|sass)$/,
+                use: [
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            import: true
+                        }
+                    }
+                    , 'sass-loader'
+                ],
             },
             {
-                test: /\.(png|jpg|jpeg|ico)/,
+                test: /\.(png|jpg|jpeg|ico|webp)/,
                 type: 'asset/resource',
                 generator: {
-                    filename: 'assets/img/[name].[hash:8][ext]'
+                    filename: 'assets/images/[name].[hash:8][ext]'
                 }
             },
             {
-                test: /\.(woff|woff2|eot|ttf|otf|svg)$/i,
+                test: /\.(woff|woff2|eot|ttf|otf)$/i,
                 type: 'asset/resource',
                 generator: {
                     filename: 'assets/fonts/[name][ext][query]'
                 }
+            },
+            {
+                test: /\.(svg)$/i,
+                type: 'asset/resource',
+                generator: {
+                    filename: 'assets/icons/[name][ext][query]'
+                }
             }
         ]
     },
+
     devServer: {
         static: {
             directory: path.join(__dirname, 'dist')
         },
         watchFiles: {
-            paths: ['src/**/*.*', 'src/sass/**/*.*'],
+            paths: ['src/**/*.*', 'src/styles/**/*.*'],
             options: {
                 usePolling: true
             }
         }
     },
-    stats: 'errors-only'
+    watchOptions: {
+        poll: 1000, // Check for changes every second
+    },
+    stats: 'errors-only',
+    watch: true
 };

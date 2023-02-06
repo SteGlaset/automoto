@@ -1,11 +1,114 @@
-doctype html
-html(lang="ru")
-    head
-        meta(charset="utf-8")
-        title
-        link(href="styles/bootstrap.min.css", rel="stylesheet")
-        link(href="styles/style.css", rel="stylesheet")
-    body
-        script(src="js/bootstrap.bundle.js", async)
-        script(src="js/index.js", async)
+extends components/base
 
+block main
+    main#main
+        section#first-screen
+            .container
+                p.text-center Автошкола в Санкт-Петербурге
+                h1.text-center АвтоМото
+                p.first-screen__description.text-center
+                | Лицензированная автошкола СПб с парком новых иномарок
+                br
+                | Обучение вождению онлайн и офлайн с полным сопровождением
+                br
+                | Автодромы у метро рядом с домом, профессиональные инструкторы
+                br
+                | Практика для водителей категории Б по маршрутам ГИБДД
+                br
+                | Права за 3 месяца под ключ с беспроцентной рассрочкой за обучение
+                a.link(href="") Оставить заявку
+        section#categories
+            .container
+                ul.categories__ul.d-flex
+                    each category in categories
+                        li.categories__li
+                            ul.category__ul
+                                li.category__li.category__title
+                                    h3= category.title
+                                each advantage in category.advantages
+                                    li.category__li.category__advantage= advantage
+                                li.category__li.category__price= category.price
+        section#branches
+            .container
+                h3 Филиалы автошколы в СПб
+                ul.branches__ul
+                    each branch in branches
+                        li.branches__li
+                            a.branch__link(href=branch.href)
+                                img.branch__icon(src=require("./assets/icons/point.svg"), alt="")
+                                p.branch__name= branch.name
+        section#why-we
+            .container
+                h3 Почему выбирают нас
+                ul.why-we__ul
+                    each card in whyWeCards
+                        li.why-we__li
+                            img.why-we__icon(src=require(card.imageSrc), alt=card.imageAlt)
+                            h5= card.title
+                            p= card.description
+        section#auto-stages
+            .container
+                h3 Как проходит обучение на АВТО
+                ul.stages__ul
+                    each stage in autoStages
+                        li.auto-stages__li
+                            p
+                                span.stage__index= stage.index
+                                = stage.title
+                            p.stage__description= stage.description
+        section#photos
+            .container
+                ul.photos__ul
+                    li.photos__li
+                        h3 Автоплощадки
+                        div
+                    li.photos__li
+                        h3 Мотоплощадки
+                        div
+        section#moto-stages
+            .container
+                h3.text-center Как проходит обучение на МОТО
+                ul.moto-stages__ul
+                    li.moto-stages__li
+                        each stage in motoStages
+                            li.moto-stages__li
+                                p
+                                    span.stage__index= stage.index
+                                    = stage.title
+                                p.stage__description= stage.description
+                    li.moto-stages__li
+                        img(src="", alt="Женщина на мотоцикле")
+        section#instructors
+            .container
+                h3.text_white.text-center Инструкторы
+                ul.instructors__ul
+                    each instructor in instructors
+                        li.instructors__li
+                            img.instructor__image(src="", alt=instructor.name + " фото")
+                            h5= instructor.name
+                            p.instructor__age= instructor.age
+                            p.instructor__description= instructor.description
+        section#autopark
+            .container
+                h3.text-center Автопарк
+                div
+        section#reviews
+            .container
+                h3.text-center Отзывы
+                div
+        section#events
+            .container
+                .event
+                    h3.title_red Новая Акция
+                    p.event__description Сдать на права A+B с выгодой 5000 руб.
+                .event
+                    h3.title_red Услуга выездной менеджер
+                    p.event__description Оставьте заявку, чтобы заключить договор со школой вождения уже через 1,5 часа
+        section#faq
+            .container
+                h3.text-center Часто задаваемые вопросы
+                div
+        section#enroll
+            .container
+                h3.text_white.text-center Остались вопросы?
+                p.enroll__description.text_white Наш менеджер свяжется с Вами через несколько минут

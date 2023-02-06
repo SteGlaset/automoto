@@ -1,0 +1,19 @@
+include variables
+
+doctype html
+html(lang="ru")
+    head
+        meta(charset="utf-8")
+        title= title
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(href=require("../styles/bootstrap.min.css"), rel="stylesheet")
+        link(href=require("../styles/style.sass"), rel="stylesheet")
+        block styles
+    body
+        include header
+        block main
+        include footer
+    script(src=require("../js/bootstrap.bundle.js"), async)
+    script(src=require("../js/index.js"), async)
+    block scripts
+

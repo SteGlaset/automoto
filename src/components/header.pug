@@ -1,0 +1,12 @@
+header#header
+    .container.d-flex
+        .col-6
+            img(src=require("../assets/images/logo.webp"), alt="Лого")
+        nav.navbar.navbar-expand-lg.navbar-light.bg-light
+            button.navbar-toggler(type="button", data-toggle="collapse", data-target="#navbarNav", aria-controls="navbarNav", aria-expanded="false", aria-label="Toggle navigation")
+                span.navbar-toggler-icon
+            .collapse.navbar-collapse#navbarNav
+                ul.navbar-nav
+                    each link in navLinks
+                        li.nav-item.active
+                            a.nav-link(href=link.href)= link.name
