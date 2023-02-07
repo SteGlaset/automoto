@@ -1,0 +1,35 @@
+@import src/styles/components/variables
+
+#why-we
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 55.21%), url("../../../assets/images/why-we/why-we-bg.webp")
+  background-size: cover
+
+.why-we__ul
+  display: grid
+  width: fit-content
+  align-items: end
+  grid-template-columns: repeat(2, 324px)
+  grid-auto-rows: minmax(max-content, auto)
+  gap: 40px 25px
+  margin-inline: auto
+  margin-top: 50px
+
+  .why-we__li
+    height: 100%
+    background: rgba(255, 255, 255, 0.85)
+    padding: 20px 38px
+
+    .why-we__icon
+      display: block
+      width: 60px
+      height: 60px
+      margin-inline: auto
+      margin-bottom: 6px
+
+    .why-we__subtitle
+      font-weight: 700
+      font-size: 16px
+      margin-bottom: 6px
+
+    .why-we__description
+      font-size: 1.4rem

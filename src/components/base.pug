@@ -1,4 +1,7 @@
+include mixins
 include variables
+
+block variables
 
 doctype html
 html(lang="ru")
@@ -6,6 +9,7 @@ html(lang="ru")
         meta(charset="utf-8")
         title= title
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(href=require("../styles/normalize.css"), rel="stylesheet")
         link(href=require("../styles/bootstrap.min.css"), rel="stylesheet")
         link(href=require("../styles/style.sass"), rel="stylesheet")
         block styles

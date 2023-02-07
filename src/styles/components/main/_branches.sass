@@ -1,0 +1,33 @@
+@import src/styles/components/variables
+
+#branches
+  background: url("../../../assets/images/branches-main/branches-bg.webp")
+  background-size: cover
+  padding-bottom: 115px
+
+.branches__ul
+  width: 90%
+  display: grid
+  align-items: center
+  grid-template-columns: repeat(4, 1fr)
+  grid-auto-rows: minmax(max-content, auto)
+  gap: 95px 30px
+  margin: 95px auto 0
+
+.branches__li
+  margin-block: calc(10px - 50%)
+
+.branch__link
+  position: relative
+  text-decoration: none
+  font-size: 2.4rem
+  line-height: 2.8rem
+  color: $black
+  &:hover
+    color: $black
+
+  .branch__icon
+    width: 30px
+    height: 45px
+    margin-right: 10px
+    filter: invert(67%) sepia(89%) saturate(7492%) hue-rotate(349deg) brightness(84%) contrast(96%)

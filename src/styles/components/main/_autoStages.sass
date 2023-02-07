@@ -1,0 +1,47 @@
+@import src/styles/components/variables
+
+#auto-stages
+  background: url("../../../assets/images/auto-stages/conus-bg.webp") 0 center no-repeat, url("../../../assets/images/auto-stages/stages-car-bg.webp") 100% center no-repeat
+  background-size: contain
+
+.stages__ul
+  margin-top: 50px
+  gap: 52px 122px
+  margin-bottom: 53px
+
+.stage__index
+  display: inline-block
+  width: 24px
+  font-family: 'Roboto', sans-serif
+  font-size: 1.6rem
+  color: $red
+
+.stage__title
+  display: inline-block
+  font-size: 1.6rem
+  margin-bottom: 5px
+
+.stage__description
+  font-size: 1.4rem
+  color: $light-grey
+
+.auto-stages__li
+  position: relative
+  &:nth-of-type(-n + 2)::after
+    content: ""
+    display: block
+    width: 1px
+    height: calc(100% + 122px)
+    background: $lighter-grey
+    position: absolute
+    right: -26px
+    top: 0
+  &:nth-of-type(1)::before
+    content: ""
+    display: block
+    width: calc(300% + 122px * 2 - 24px * 2)
+    height: 1px
+    background: $lighter-grey
+    position: absolute
+    left: 24px
+    bottom: -22px

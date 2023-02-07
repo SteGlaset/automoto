@@ -4,19 +4,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "watch": "webpack --watch",
+    "serve": "webpack serve --open --config webpack.config.js",
     "build": "webpack",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "postbuild": "purgecss --css build/styles/*.css --content build/index.html build/js/*.js --output build/styles"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^5.0.0",
     "css-loader": "^6.7.3",
-    "glob": "^8.1.0",
     "postcss": "^8.4.21",
     "pug-plugin": "^4.9.4",
-    "purgecss-webpack-plugin": "^5.0.0",
     "sass": "^1.58.0",
     "sass-loader": "^13.2.0",
     "webpack": "^5.75.0",

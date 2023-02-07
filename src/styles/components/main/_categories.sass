@@ -1,0 +1,33 @@
+#categories
+  background: url("../../../assets/images/categories/auto-bg.webp") no-repeat 100% center, url("../../../assets/images/categories/moto-bg.webp") no-repeat 0 center
+  background-size: contain
+
+.categories__ul
+  margin-block: 60px 70px
+
+.categories__li:nth-of-type(odd) .category__content::after
+  content: ""
+  display: block
+  position: absolute
+  top: 0
+  right: 0
+  width: 1px
+  height: 100%
+  background: #333333
+
+.category__title
+  margin-bottom: 40px
+  font-size: 4rem
+
+.category__content
+  position: relative
+
+.category__advantage
+  font-size: 1.4rem
+  margin-bottom: 16px
+
+.category__price
+  margin-block: 33px 40px
+  font-family: 'Roboto', sans-serif
+  font-size: 2.4rem
+  font-weight: 500

@@ -1,40 +1,49 @@
 extends components/base
 
+block variables
+    - navLinks[0].active = true
+
+block styles
+    link(href=require("styles/components/main/bundle.sass"), rel="stylesheet")
+
 block main
     main#main
-        section#first-screen
-            .container
-                p.text-center Автошкола в Санкт-Петербурге
-                h1.text-center АвтоМото
-                p.first-screen__description.text-center
-                | Лицензированная автошкола СПб с парком новых иномарок
-                br
-                | Обучение вождению онлайн и офлайн с полным сопровождением
-                br
-                | Автодромы у метро рядом с домом, профессиональные инструкторы
-                br
-                | Практика для водителей категории Б по маршрутам ГИБДД
-                br
-                | Права за 3 месяца под ключ с беспроцентной рассрочкой за обучение
-                a.link(href="") Оставить заявку
+        section#automoto
+            .container.h-100
+                p.automoto-subtitle.text-center.text-white Автошкола в Санкт-Петербурге
+                .d-flex.flex-column.justify-content-center.h-100
+                    h1.title.text-center.text-white АвтоМото
+                    p.automoto__description.text-center.text-white
+                        | Лицензированная автошкола СПб с парком новых иномарок
+                        br
+                        | Обучение вождению онлайн и офлайн с полным сопровождением
+                        br
+                        | Автодромы у метро рядом с домом, профессиональные инструкторы
+                        br
+                        | Практика для водителей категории Б по маршрутам ГИБДД
+                        br
+                        | Права за 3 месяца под ключ с беспроцентной рассрочкой за обучение
+                    +enrollModal()
         section#categories
             .container
-                ul.categories__ul.d-flex
+                ul.categories__ul.d-flex.justify-content-between.flex-wrap
                     each category in categories
-                        li.categories__li
-                            ul.category__ul
-                                li.category__li.category__title
+                        li.categories__li.col-6
+                            .category__list
+                                .category__item.category__title.text-center
                                     h3= category.title
-                                each advantage in category.advantages
-                                    li.category__li.category__advantage= advantage
-                                li.category__li.category__price= category.price
+                                .category__content
+                                    each advantage in category.advantages
+                                        .category__item.category__advantage.text-center= advantage
+                                    .category__item.category__price.text-center= category.price
+                                +enrollModal()
         section#branches
             .container
                 h3 Филиалы автошколы в СПб
                 ul.branches__ul
                     each branch in branches
-                        li.branches__li
-                            a.branch__link(href=branch.href)
+                        li.branches__li.d-flex.justify-content-center
+                            a.branch__link.d-flex.align-items-center.w-100(href=branch.href)
                                 img.branch__icon(src=require("./assets/icons/point.svg"), alt="")
                                 p.branch__name= branch.name
         section#why-we
@@ -44,18 +53,18 @@ block main
                     each card in whyWeCards
                         li.why-we__li
                             img.why-we__icon(src=require(card.imageSrc), alt=card.imageAlt)
-                            h5= card.title
-                            p= card.description
+                            h5.why-we__subtitle.text-center= card.title
+                            p.why-we__description.text-center= card.description
         section#auto-stages
             .container
                 h3 Как проходит обучение на АВТО
-                ul.stages__ul
+                ul.stages__ul.col-10.mx-auto.d-flex.flex-wrap
                     each stage in autoStages
-                        li.auto-stages__li
-                            p
-                                span.stage__index= stage.index
-                                = stage.title
+                        li.auto-stages__li.col-3
+                            span.stage__index= stage.index
+                            h5.stage__title= stage.title
                             p.stage__description= stage.description
+                +enrollModal()
         section#photos
             .container
                 ul.photos__ul
