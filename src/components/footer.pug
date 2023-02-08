@@ -1,12 +1,13 @@
 footer#footer
     .container
-        h4 Автошкола "АвтоМото"
+        h4.footer__title.text-center Автошкола "АвтоМото"
         ul.contacts
-            li.contacts__li Время работы
+            li.contacts__li.text-center Время работы:
                 = " " + workTime
-            li.contacts__li Телефон
-                a(href=`tel:${phone.notFormatted}`)= " " + phone.formatted
-            li.contacts__li Email
-                a(href=`mailto:${mail}`)= " " + mail
-            li.contacts__li
-                a.social__link
+            li.contacts__li.text-center Телефон:
+                a.contacts__link(href=`tel:${phone.notFormatted}`)= " " + phone.formatted
+            li.contacts__li.text-center Email:
+                a.contacts__link(href=`mailto:${mail}`)= " " + mail
+            li.contacts__li.text-center
+                a.social__link(href="https://vk.com")
+                    img.social__icon(src=require("../assets/icons/vk.svg"))

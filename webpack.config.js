@@ -12,16 +12,17 @@ module.exports = {
     },
     output: {
         path: path.join(__dirname, 'dist'),
-        filename: 'js/[name].[contenthash:8].js'
+        filename: 'js/[name].js'
     },
     plugins: [
         new PugPlugin({
             pretty: true,
             css: {
-                filename: 'css/[name].[contenthash:8].css'
+                filename: 'css/[name].css'
             }
         })
     ],
+    //.[contenthash:8]
     mode: 'development',
     module: {
         rules: [

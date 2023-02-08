@@ -1,1 +1,52 @@
 @import src/styles/components/variables
+
+#faq-accordion
+  margin-top: 50px
+
+.accordion-item
+  width: 50vw
+  margin: 0 auto 32px
+  padding: 10px 20px
+  background: $dark-red
+
+.accordion-item .accordion-button
+  background: none
+  box-shadow: none
+  color: $white
+  font-size: 1.6rem
+
+.accordion-button::after
+  content: none
+
+.accordion-button:focus
+  box-shadow: none
+
+.accordion-question
+  width: 90%
+
+.accordion-svg
+  position: absolute
+  top: 13px
+  right: 0
+  transition: transform .3s
+
+.accordion-button:not(.collapsed) .accordion-svg
+  transform: rotate(-90deg)
+
+.accordion-body
+  font-size: 1.3rem
+  font-weight: 500
+  color: $white
+  line-height: 1.5rem
+
+@media screen and (max-width: 991px)
+  .accordion-item
+    padding: 10px 20px
+
+@media screen and (max-width: 768px)
+  .accordion-item
+    padding: 10px 20px
+
+@media screen and (max-width: 575px)
+  .accordion-question
+    width: 80%

@@ -65,59 +65,67 @@ block main
                             h5.stage__title= stage.title
                             p.stage__description= stage.description
                 +enrollModal()
-        section#photos
-            .container
-                ul.photos__ul
-                    li.photos__li
-                        h3 Автоплощадки
-                        div
-                    li.photos__li
-                        h3 Мотоплощадки
-                        div
-        section#moto-stages
-            .container
-                h3.text-center Как проходит обучение на МОТО
-                ul.moto-stages__ul
-                    li.moto-stages__li
-                        each stage in motoStages
-                            li.moto-stages__li
-                                p
-                                    span.stage__index= stage.index
-                                    = stage.title
-                                p.stage__description= stage.description
-                    li.moto-stages__li
-                        img(src="", alt="Женщина на мотоцикле")
+        .photos-n-moto-stages
+            section#photos
+                .container
+                    ul.photos__ul.d-flex.justify-content-around
+                        li.photos__li
+                            h3 Автоплощадки
+                            div
+                        li.photos__li
+                            h3 Мотоплощадки
+                            div
+            section#moto-stages
+                .container
+                    h3.text-center Как проходит обучение на МОТО
+                    ul.moto-stages__ul.d-flex.mx-auto.justify-content-center
+                        li.moto-stages__li.col-5
+                            ul.moto-stage__ul
+                                each stage in motoStages
+                                    li.moto-stage__li
+                                        span.stage__index= stage.index
+                                        h5.stage__title= stage.title
+                                        p.stage__description= stage.description
+                        li.moto-stages__li
+                            img.moto-stages__image(src=require("assets/images/woman-on-moto.webp"), alt="Женщина на мотоцикле")
+                    +enrollModal()
         section#instructors
             .container
                 h3.text_white.text-center Инструкторы
-                ul.instructors__ul
+                ul.instructors__ul.d-flex.justify-content-center
                     each instructor in instructors
                         li.instructors__li
                             img.instructor__image(src="", alt=instructor.name + " фото")
-                            h5= instructor.name
-                            p.instructor__age= instructor.age
-                            p.instructor__description= instructor.description
-        section#autopark
-            .container
-                h3.text-center Автопарк
-                div
-        section#reviews
-            .container
-                h3.text-center Отзывы
-                div
+                            .instructor__content
+                                h5.text-center.instructor__name= instructor.name
+                                p.text-center.instructor__age= instructor.age
+                                p.text-center.instructor__description= instructor.description
+        .autopark-n-reviews
+            section#autopark
+                .container
+                    h3.text-center Автопарк
+                    +carousel(cars, 1, "photo", { isIndicate: true, classes: "autopark__photo", isDescripted: true })
+            section#reviews
+                .container
+                    h3.text-center Отзывы
+                    div
         section#events
             .container
                 .event
-                    h3.title_red Новая Акция
-                    p.event__description Сдать на права A+B с выгодой 5000 руб.
+                    h3.text_red Новая Акция
+                    p.event__description.text-center Сдать на права A+B с выгодой 5000 руб.
                 .event
-                    h3.title_red Услуга выездной менеджер
-                    p.event__description Оставьте заявку, чтобы заключить договор со школой вождения уже через 1,5 часа
+                    h3.text_red Услуга выездной менеджер
+                    p.event__description.text-center Оставьте заявку, чтобы заключить договор со школой вождения уже через 1,5 часа
+            +enrollModal()
         section#faq
             .container
                 h3.text-center Часто задаваемые вопросы
-                div
+                .accordion#faq-accordion
+                    each el, i in questions
+                        +accordionItem(i, el.question, el.answer)
         section#enroll
             .container
                 h3.text_white.text-center Остались вопросы?
-                p.enroll__description.text_white Наш менеджер свяжется с Вами через несколько минут
+                p.enroll__description.text-center.text_white Наш менеджер свяжется с Вами через несколько минут
+                +enrollForm('enroll-form')
