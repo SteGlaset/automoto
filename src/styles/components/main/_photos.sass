@@ -1,1 +1,29 @@
 @import src/styles/components/variables
+
+.photos__li
+  width: 50%
+  position: relative
+  padding-inline: $photos-li-inline-padding
+
+  &:first-of-type .carousel::after
+    content: ""
+    display: block
+    position: absolute
+    top: -50px
+    right: -$photos-li-inline-padding
+    width: 1px
+    height: 100%
+    background: #333333
+
+@media screen and (max-width: $md)
+  .photos__ul
+    margin-bottom: -50px
+
+  .photos__li
+    width: 100%
+    margin-bottom: 40px
+
+    &:first-of-type .carousel::after
+      content: none
+
+

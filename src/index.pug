@@ -28,7 +28,7 @@ block main
             .container
                 ul.categories__ul.d-flex.justify-content-between.flex-wrap
                     each category in categories
-                        li.categories__li.col-6
+                        li.categories__li.col-md-6.col-12
                             .category__list
                                 .category__item.category__title.text-center
                                     h3= category.title
@@ -58,9 +58,9 @@ block main
         section#auto-stages
             .container
                 h3 Как проходит обучение на АВТО
-                ul.stages__ul.col-10.mx-auto.d-flex.flex-wrap
+                ul.stages__ul.col-xl-10.col-lg-12.mx-auto.d-flex.flex-wrap.justify-content-sm-center.justify-content-start
                     each stage in autoStages
-                        li.auto-stages__li.col-3
+                        li.auto-stages__li.col-sm-3.col-12
                             span.stage__index= stage.index
                             h5.stage__title= stage.title
                             p.stage__description= stage.description
@@ -68,18 +68,18 @@ block main
         .photos-n-moto-stages
             section#photos
                 .container
-                    ul.photos__ul.d-flex.justify-content-around
+                    ul.photos__ul.d-flex.justify-content-around.flex-md-row.flex-column
                         li.photos__li
                             h3 Автоплощадки
-                            div
+                            +carousel(autoArea, 1, "photo", { isControlled: true, isDescripted: true, isFaded: true })
                         li.photos__li
                             h3 Мотоплощадки
-                            div
+                            +carousel(motoArea, 2, "photo", { isControlled: true, isDescripted: true, isFaded: true })
             section#moto-stages
                 .container
                     h3.text-center Как проходит обучение на МОТО
-                    ul.moto-stages__ul.d-flex.mx-auto.justify-content-center
-                        li.moto-stages__li.col-5
+                    ul.moto-stages__ul.d-flex.mx-auto.justify-content-center.align-items-center.flex-sm-row.flex-column
+                        li.moto-stages__li.col-sm-5.col-10
                             ul.moto-stage__ul
                                 each stage in motoStages
                                     li.moto-stage__li
@@ -92,10 +92,10 @@ block main
         section#instructors
             .container
                 h3.text_white.text-center Инструкторы
-                ul.instructors__ul.d-flex.justify-content-center
+                ul.instructors__ul.d-flex.justify-content-center.flex-wrap
                     each instructor in instructors
                         li.instructors__li
-                            img.instructor__image(src="", alt=instructor.name + " фото")
+                            img.instructor__image(src=require(instructor.imageSrc), alt=instructor.name + " фото")
                             .instructor__content
                                 h5.text-center.instructor__name= instructor.name
                                 p.text-center.instructor__age= instructor.age
@@ -104,11 +104,11 @@ block main
             section#autopark
                 .container
                     h3.text-center Автопарк
-                    +carousel(cars, 1, "photo", { isIndicate: true, classes: "autopark__photo", isDescripted: true })
+                    +carousel(cars, 3, "photo", { isControlled: true, isDescripted: true })
             section#reviews
                 .container
                     h3.text-center Отзывы
-                    div
+                    +carousel(reviews, 4, "review", { isControlled: true, isDescripted: true })
         section#events
             .container
                 .event

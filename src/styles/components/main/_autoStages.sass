@@ -6,7 +6,7 @@
 
 .stages__ul
   margin-top: 50px
-  gap: 52px 122px
+  gap: $autostages-block-gap $autostages-inline-gap
   margin-bottom: 53px
 
 .stage__index
@@ -31,7 +31,7 @@
     content: ""
     display: block
     width: 1px
-    height: calc(100% + 122px)
+    height: calc(200% + $autostages-block-gap / 2)
     background: $lighter-grey
     position: absolute
     right: -26px
@@ -39,9 +39,86 @@
   &:nth-of-type(1)::before
     content: ""
     display: block
-    width: calc(300% + 122px * 2 - 24px * 2)
+    width: calc(300% + $autostages-inline-gap * 2 - 24px * 2)
     height: 1px
     background: $lighter-grey
     position: absolute
     left: 24px
     bottom: -22px
+
+@media screen and (max-width: $xxl)
+  $autostages-inline-gap: 100px
+  $autostages-block-gap: 52px
+
+  #auto-stages
+    background: url("../../../assets/images/background/conus-bg.webp") 5% 20% no-repeat, url("../../../assets/images/background/stages-car-bg.webp") 100% 100% no-repeat
+    background-size: 40%, 50%
+
+  .stages__ul
+    gap: $autostages-block-gap $autostages-inline-gap
+
+  .auto-stages__li
+    &:nth-of-type(-n + 2)::after
+      height: calc(200% + $autostages-block-gap / 2)
+
+    &:nth-of-type(1)::before
+      width: calc(300% + $autostages-inline-gap * 2 - 24px * 2)
+
+@media screen and (max-width: $xl)
+  $autostages-inline-gap: 60px
+  $autostages-block-gap: 52px
+
+  .stages__ul
+    gap: $autostages-block-gap $autostages-inline-gap
+
+  .auto-stages__li
+    &:nth-of-type(-n + 2)::after
+      height: calc(200% + $autostages-block-gap / 2)
+
+    &:nth-of-type(1)::before
+      width: calc(300% + $autostages-inline-gap * 2 - 24px * 2)
+
+@media screen and (max-width: $sm)
+  $autostages-block-gap: 40px
+
+  .stages__ul
+    width: 270px
+    gap: $autostages-block-gap
+    border-left: 1px solid $lighter-grey
+    padding-left: 39px
+
+  .stage__index
+    display: inline-block
+    width: 18px
+    font-family: 'Roboto', sans-serif
+    font-size: 1.6rem
+    color: $red
+
+  .auto-stages__li
+    position: relative
+
+    &:nth-of-type(-n + 2)::after
+      content: none
+
+    &:nth-of-type(1)::before
+      content: none
+      display: block
+      width: calc(300% + $autostages-inline-gap * 2 - 24px * 2)
+      height: 1px
+      background: $lighter-grey
+      position: absolute
+      left: 24px
+      bottom: -22px
+
+    &:not(:last-child)::before
+      content: ""
+      display: block
+      width: calc(100% - 24px * 2)
+      height: 1px
+      background: $lighter-grey
+      position: absolute
+      left: -39px
+      bottom: -22px
+
+
+

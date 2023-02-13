@@ -1,12 +1,12 @@
 @import src/styles/components/variables
 
 #moto-stages
-  padding-bottom: 75px
+  padding-bottom: 7.5rem
   margin-bottom: -5px
 
 .moto-stages__ul
   width: fit-content
-  margin: 50px auto 70px
+  margin: 5rem auto 7rem
 
 .moto-stages__image
   width: 280px
@@ -15,3 +15,13 @@
   padding: 10px
   box-sizing: content-box
   margin-left: 10px
+
+@media screen and (max-width: $sm)
+  .moto-stages__ul
+    margin-bottom: 2rem
+
+  .moto-stages__li
+    margin-bottom: 20px
+
+  .moto-stage__li
+    margin-bottom: 16px

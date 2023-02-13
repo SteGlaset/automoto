@@ -21,7 +21,7 @@ section
   justify-content: center
   align-items: center
   margin-inline: auto
-  padding: 10px 40px
+  padding: 1rem 4rem
   background: $red
   font-size: 1.4rem
   color: $white
@@ -45,8 +45,53 @@ section
   box-sizing: content-box
 
 .carousel.slide
-  margin-top: 50px
+  margin-top: 5rem
 
 .carousel-description
   font-size: 1.6rem
   margin-top: 10px
+
+
+.carousel-photo
+  display: block
+  height: 264px
+  width: auto
+  margin-inline: auto
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25)
+
+.carousel-description
+  margin-bottom: 15px
+
+.carousel-review
+  display: flex
+  width: 638px
+  height: auto
+  padding: 20px
+  align-items: center
+  background: $white
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25)
+  margin: 0 auto 15px
+
+  &-image
+    height: 180px
+    width: auto
+    box-sizing: content-box
+    padding: 10px
+    border: 1px solid #000000
+    margin-right: 20px
+
+  &-title
+    font-family: 'Montserrat', sans-serif
+    font-weight: 500
+    font-size: 1.6rem
+    margin-bottom: 16px
+
+  &-description
+    font-family: 'Montserrat', sans-serif
+    font-weight: 400
+    font-size: 1.6rem
+    line-height: 20px
+
+@media screen and (max-width: $lg)
+  html
+    font-size: calc(5px + 5 * (100vw / 1199))

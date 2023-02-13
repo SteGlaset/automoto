@@ -1,19 +1,24 @@
+@import src/styles/components/variables
+
 #categories
   background: url("../../../assets/images/background/auto-bg.webp") no-repeat 100% center, url("../../../assets/images/background/moto-bg.webp") no-repeat 0 center
   background-size: contain
 
 .categories__ul
-  margin-block: 60px 70px
+  margin: 60px -15px 70px
 
-.categories__li:nth-of-type(odd) .category__content::after
-  content: ""
-  display: block
-  position: absolute
-  top: 0
-  right: 0
-  width: 1px
-  height: 100%
-  background: #333333
+.categories__li
+  padding-inline: 15px
+
+  &:nth-of-type(odd) .category__content::after
+    content: ""
+    display: block
+    position: absolute
+    top: 0
+    right: -15px
+    width: 1px
+    height: 100%
+    background: #333333
 
 .category__title
   margin-bottom: 40px
@@ -24,10 +29,26 @@
 
 .category__advantage
   font-size: 1.4rem
-  margin-bottom: 16px
+  margin-bottom: 1.6rem
 
 .category__price
-  margin-block: 33px 40px
+  margin-block: 3.3rem 40px
   font-family: 'Roboto', sans-serif
   font-size: 2.4rem
   font-weight: 500
+
+@media screen and (max-width: $md)
+  #categories
+    background: url("../../../assets/images/background/auto-bg.webp") no-repeat 100% 100%, url("../../../assets/images/background/moto-bg.webp") no-repeat 0 0
+    background-size: 60%
+
+  .category__list
+    .link
+      margin-bottom: 50px
+
+  .categories__li
+    &:nth-of-type(odd) .category__content::after
+      content: none
+
+  .categories__ul
+    margin: 0 0 -50px
