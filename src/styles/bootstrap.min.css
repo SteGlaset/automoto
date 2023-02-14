@@ -6125,14 +6125,6 @@ textarea.form-control-lg {
     transform: translateX(-100%);
 }
 
-.active.carousel-item-start .carousel-photo, .carousel-item-prev:not(.carousel-item-end) .carousel-photo {
-    box-shadow: none;
-}
-
-.active.carousel-item-end .carousel-photo, .carousel-item-next:not(.carousel-item-start) .carousel-photo {
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.125);
-}
-
 .carousel-fade .carousel-item {
     opacity: 0;
     transition-property: opacity;

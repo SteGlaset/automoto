@@ -1,9 +1,14 @@
 @import variables
 
 #header
+  width: 100%
   height: 67px
   background: #FFF
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25)
+  position: fixed
+  top: 0
+  left: 0
+  z-index: 2
 
 .header__logo
   height: 45px
@@ -17,3 +22,62 @@
   color: $black
   &.active
     color: $dark-red
+
+.navbar-toggler
+  border: none
+  float: right
+
+.navbar-toggler:focus
+  box-shadow: none
+
+.navbar-svg
+  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25))
+
+.modal-content
+  margin: 20px
+  border-radius: 0
+  border: none
+
+.modal-header
+  position: relative
+  min-height: 44px
+
+.btn-close
+  background: none
+  margin: 0
+  padding: 0
+  position: absolute
+  top: 15px
+  right: calc(23px + 1rem)
+  opacity: 1
+
+.btn-close svg
+  width: 3rem
+  height: 3rem
+
+.btn-close:hover
+  filter: drop-shadow(0 0 4px #850102)
+  opacity: 1
+
+.btn-close:active
+  box-shadow: none
+
+.modal-header
+  border: none
+
+.modal-body
+  margin-bottom: 32px
+
+.modal-body .nav-link
+  font-size: 14px
+  color: $black
+
+  &:hover
+    color: rgba(0, 0, 0, 0.7)
+
+  &.active
+    color: $dark-red
+
+
+.modal-body .navigation__link
+  margin-bottom: 15px

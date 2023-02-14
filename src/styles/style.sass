@@ -3,6 +3,7 @@
 html
   font-family: 'Play', sans-serif
   font-size: 10px
+  scroll-padding-top: 66px
 
 h3
   font-size: 4rem
@@ -28,8 +29,10 @@ section
   text-decoration: none
   text-transform: uppercase
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25)
+  transition: box-shadow .05s
   &:hover
     color: $white
+    box-shadow: 0 0 30px rgba(213, 4, 5, 0.93)
 
 .text_white
   color: $white
@@ -43,6 +46,17 @@ section
   padding: 10px
   border: 1px solid #D9D9D9
   box-sizing: content-box
+
+.carousel-fade .active.carousel-item-end .carousel-photo,
+.carousel-fade .carousel-item-next:not(.carousel-item-start) .carousel-photo
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.125)
+
+.carousel-fade .active.carousel-item-start .carousel-photo,
+.carousel-fade .carousel-item-prev:not(.carousel-item-end) .carousel-photo
+  box-shadow: none
+
+.carousel-item
+  margin-bottom: 6px
 
 .carousel.slide
   margin-top: 5rem
@@ -60,37 +74,11 @@ section
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25)
 
 .carousel-description
-  margin-bottom: 15px
+  margin-bottom: 0
 
-.carousel-review
-  display: flex
-  width: 638px
-  height: auto
-  padding: 20px
-  align-items: center
-  background: $white
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25)
-  margin: 0 auto 15px
-
-  &-image
-    height: 180px
-    width: auto
-    box-sizing: content-box
-    padding: 10px
-    border: 1px solid #000000
-    margin-right: 20px
-
-  &-title
-    font-family: 'Montserrat', sans-serif
-    font-weight: 500
-    font-size: 1.6rem
-    margin-bottom: 16px
-
-  &-description
-    font-family: 'Montserrat', sans-serif
-    font-weight: 400
-    font-size: 1.6rem
-    line-height: 20px
+.carousel-control-prev,
+.carousel-control-next
+  margin-top: 15px
 
 @media screen and (max-width: $lg)
   html

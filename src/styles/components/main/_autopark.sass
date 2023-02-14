@@ -1,7 +1,15 @@
 @import src/styles/components/variables
 
-#autopark
-  .carousel-item
-    .carousel-photo
-      width: 638px
-      height: 481px
+#autopark .carousel-item .carousel-photo
+  width: 638px
+  height: 481px
+
+@media screen and (max-width: $md)
+  #autopark .carousel-item .carousel-photo
+    width: calc(638px * 0.8)
+    height: calc(481px * 0.8)
+
+@media screen and (max-width: $sm)
+  #autopark .carousel-item .carousel-photo
+    width: calc(638px * 0.5)
+    height: calc(481px * 0.5)

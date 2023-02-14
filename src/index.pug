@@ -71,10 +71,18 @@ block main
                     ul.photos__ul.d-flex.justify-content-around.flex-md-row.flex-column
                         li.photos__li
                             h3 Автоплощадки
-                            +carousel(autoArea, 1, "photo", { isControlled: true, isDescripted: true, isFaded: true })
+                            +carousel(autoArea, 1, "photo", {
+                                isControlled: true,
+                                isDescripted: true,
+                                carouselClasses: "carousel-fade"
+                            })
                         li.photos__li
                             h3 Мотоплощадки
-                            +carousel(motoArea, 2, "photo", { isControlled: true, isDescripted: true, isFaded: true })
+                            +carousel(motoArea, 2, "photo", {
+                                isControlled: true,
+                                isDescripted: true,
+                                carouselClasses: "carousel-fade"
+                            })
             section#moto-stages
                 .container
                     h3.text-center Как проходит обучение на МОТО
@@ -92,7 +100,7 @@ block main
         section#instructors
             .container
                 h3.text_white.text-center Инструкторы
-                ul.instructors__ul.d-flex.justify-content-center.flex-wrap
+                ul.instructors__ul.d-none.d-md-flex.justify-content-center.flex-wrap
                     each instructor in instructors
                         li.instructors__li
                             img.instructor__image(src=require(instructor.imageSrc), alt=instructor.name + " фото")
@@ -100,6 +108,11 @@ block main
                                 h5.text-center.instructor__name= instructor.name
                                 p.text-center.instructor__age= instructor.age
                                 p.text-center.instructor__description= instructor.description
+                +carousel(instructors, 5, "instructor", {
+                    isControlled: true,
+                    carouselClasses: "d-md-none d-block",
+                    controlWhite: true
+                })
         .autopark-n-reviews
             section#autopark
                 .container

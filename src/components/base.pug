@@ -13,11 +13,10 @@ html(lang="ru")
         link(href=require("../styles/bootstrap.min.css"), rel="stylesheet")
         link(href=require("../styles/style.sass"), rel="stylesheet")
         block styles
+        script(src=require("../js/bootstrap.bundle.js"), defer)
+        script(src=require("../js/index.js"), defer)
+        block scripts
     body
         include header
         block main
         include footer
-    script(src=require("../js/bootstrap.bundle.js"), async)
-    script(src=require("../js/index.js"), async)
-    block scripts
-

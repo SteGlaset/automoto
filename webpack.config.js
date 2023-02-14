@@ -22,7 +22,6 @@ module.exports = {
             }
         })
     ],
-    //.[contenthash:8]
     mode: 'development',
     module: {
         rules: [
@@ -46,9 +45,10 @@ module.exports = {
                 test: /\.(png|jpg|jpeg|ico|webp)/,
                 type: 'asset/resource',
                 generator: {
-                    filename: 'assets/images/[name].[hash:8][ext]'
+                    filename: 'assets/images/[name].[ext]'
                 }
             },
+
             {
                 test: /\.(woff|woff2|eot|ttf|otf)$/i,
                 type: 'asset/resource',
