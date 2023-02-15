@@ -1,0 +1,9 @@
+#enroll {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 55.21%), url(../assets/images/faq-bg..webp) no-repeat;
+  background-size: cover;
+}
+
+.enroll__description {
+  margin-block: 20px 30px;
+  font-size: 1.6rem;
+}
