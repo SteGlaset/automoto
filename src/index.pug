@@ -1,10 +1,11 @@
-extends components/base
+extends components/_base
 
 block variables
     - navLinks[0].active = true
 
-block styles
-    link(href=require("styles/components/main/bundle.sass"), rel="stylesheet")
+block head
+    link(href=require("/src/styles/components/main.sass"), rel="stylesheet")
+    script(src=require("/src/js/index.js"), defer)
 
 block main
     main#main
@@ -13,16 +14,12 @@ block main
                 p.automoto-subtitle.text-center.text-white Автошкола в Санкт-Петербурге
                 .d-flex.flex-column.justify-content-center.h-100
                     h1.title.text-center.text-white АвтоМото
-                    p.automoto__description.text-center.text-white
-                        | Лицензированная автошкола СПб с парком новых иномарок
-                        br
-                        | Обучение вождению онлайн и офлайн с полным сопровождением
-                        br
-                        | Автодромы у метро рядом с домом, профессиональные инструкторы
-                        br
-                        | Практика для водителей категории Б по маршрутам ГИБДД
-                        br
-                        | Права за 3 месяца под ключ с беспроцентной рассрочкой за обучение
+                    ul.automoto__description.text-center.text-white
+                        li.automoto__li Лицензированная автошкола СПб с парком новых иномарок
+                        li.automoto__li Обучение вождению онлайн и офлайн с полным сопровождением
+                        li.automoto__li Автодромы у метро рядом с домом, профессиональные инструкторы
+                        li.automoto__li Практика для водителей категории Б по маршрутам ГИБДД
+                        li.automoto__li Права за 3 месяца под ключ с беспроцентной рассрочкой за обучение
                     +enrollModal()
         section#categories
             .container
@@ -43,7 +40,7 @@ block main
                 ul.branches__ul
                     each branch in branches
                         li.branches__li.d-flex.justify-content-center
-                            a.branch__link.d-flex.align-items-center.w-100(href=branch.href)
+                            a.branch__link.d-flex.align-items-center.w-100(href=`branches/${branch.href}`)
                                 img.branch__icon(src=require("./assets/icons/point.svg"), alt="")
                                 p.branch__name= branch.name
         section#why-we

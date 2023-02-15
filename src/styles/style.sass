@@ -5,8 +5,14 @@ html
   font-size: 10px
   scroll-padding-top: 66px
 
+body
+  display: flex
+  flex-direction: column
+  overflow-x: hidden
+  min-height: 100vh
+
 h3
-  font-size: 4rem
+  font-size: max(4rem, 32px)
   text-align: center
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25)
 
@@ -24,7 +30,7 @@ section
   margin-inline: auto
   padding: 1rem 4rem
   background: $red
-  font-size: 1.4rem
+  font-size: max(1.4rem, 12px)
   color: $white
   text-decoration: none
   text-transform: uppercase
@@ -56,15 +62,14 @@ section
   box-shadow: none
 
 .carousel-item
-  margin-bottom: 6px
+  margin-bottom: 8px
 
 .carousel.slide
   margin-top: 5rem
 
 .carousel-description
-  font-size: 1.6rem
+  font-size: max(1.6rem, 14px)
   margin-top: 10px
-
 
 .carousel-photo
   display: block
@@ -78,7 +83,7 @@ section
 
 .carousel-control-prev,
 .carousel-control-next
-  margin-top: 15px
+  margin-top: 10px !important
 
 @media screen and (max-width: $lg)
   html

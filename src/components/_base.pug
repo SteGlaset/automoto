@@ -1,5 +1,5 @@
-include mixins
-include variables
+include _mixins
+include _variables
 
 block variables
 
@@ -12,11 +12,9 @@ html(lang="ru")
         link(href=require("../styles/normalize.css"), rel="stylesheet")
         link(href=require("../styles/bootstrap.min.css"), rel="stylesheet")
         link(href=require("../styles/style.sass"), rel="stylesheet")
-        block styles
         script(src=require("../js/bootstrap.bundle.js"), defer)
-        script(src=require("../js/index.js"), defer)
-        block scripts
+        block head
     body
-        include header
+        include _header
         block main
-        include footer
+        include _footer

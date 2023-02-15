@@ -8,31 +8,32 @@
 - workTime = "пн-вс с 10:00 до 20:00"
 
 //-Навигационные ссылки
+-   prefixUrl = ""
 -
     navLinks = [
         {
             name: "Главная",
-            href: "#automoto"
+            href: `${prefixUrl}#automoto`
         },
         {
             name: "Цены",
-            href: "#categories"
+            href: `${prefixUrl}#categories`
         },
         {
             name: "Филиалы",
-            href: "#branches"
+            href: `${prefixUrl}#branches`
         },
         {
             name: "Как проходит обучение",
-            href: "#auto-stages"
+            href: `${prefixUrl}#auto-stages`
         },
         {
             name: "Отзывы",
-            href: "#reviews"
+            href: `${prefixUrl}#reviews`
         },
         {
             name: "Акции",
-            href: "#events"
+            href: `${prefixUrl}#events`
         }
     ]
 
@@ -66,22 +67,119 @@
 //-Филиалы
 -
     branches = [
-        {name: "Проспект Большевиков", href: ""},
-        {name: "Купчино", href: ""},
-        {name: "Автово", href: ""},
-        {name: "Комендантский Проспект", href: ""},
-        {name: "Девяткино", href: ""},
-        {name: "Приморская", href: ""},
-        {name: "Приморская", href: ""},
-        {name: "Технологический институт", href: ""},
-        {name: "Петроградская", href: ""},
-        {name: "Крестовский остров", href: ""},
-        {name: "Ломоносовская", href: ""},
-        {name: "Метро Рыбацкое", href: ""},
-        {name: "Ленинский проспект", href: ""},
-        {name: "Кудрово", href: ""},
-        {name: "Проспект Ветеранов", href: ""},
-        {name: "Комендантский Проспект", href: ""},
+        {
+            name: "Проспект Большевиков",
+            href: "prospect-bolshevikov.html",
+            address: "Пр.Большевиков - Коллонтай, 3",
+            title: "Автошкола на Проспекте Большевиков",
+            mapSrc: ""
+
+        },
+        {
+            name: "Купчино",
+            href: "kupchino.html",
+            address: "Балканская площадь, 5 лит Ю",
+            title: "Автошкола в Купчино",
+            mapSrc: ""
+        },
+        {
+            name: "Автово",
+            href: "avtovo.html",
+            address: "проспект Стачек, 99",
+            title: "Автошкола у м.Автово",
+            mapSrc: ""
+        },
+        {
+            name: "Комендантский Проспект",
+            href: "komendantskiy-aviakonstructorov.html",
+            address: "Пр.Большевиков - Коллонтай, 3",
+            title: "Автошкола у м.Комендтантский Проспект",
+            mapSrc: ""
+        },
+        {
+            name: "Девяткино",
+            href: "devyatkino.html",
+            address: "проспект Авиаторов Балтики, 7",
+            title: "Автошкола у м.Девяткино",
+            mapSrc: ""
+        },
+        {
+            name: "Приморская",
+            href: "primorskaya-jeleznovodskaya.html",
+            address: "Железноводская, 68 к1",
+            title: "Автошкола у м.Приморская",
+            mapSrc: ""
+        },
+        {
+            name: "Приморская",
+            href: "primorskaya-odoevskogo.html",
+            address: "Одоевского, 29",
+            title: "Автошкола у м.Приморская",
+            mapSrc: ""
+        },
+        {
+            name: "Технологический институт",
+            href: "technologicheskiy-institut.html",
+            address: "Марата, 86 лит А",
+            title: "Автошкола у м.Технологический институт",
+            mapSrc: ""
+        },
+        {
+            name: "Петроградская",
+            href: "petrogradskaya.html",
+            address: "Каменноостровский проспект, 42",
+            title: "Автошкола у м.Петроградская",
+            mapSrc: ""
+        },
+        {
+            name: "Крестовский остров",
+            href: "krestovskiy-ostrov.html",
+            address: "Пр.Большевиков - Коллонтай, 3",
+            title: "Автошкола у м.Крестовский остров",
+            mapSrc: ""
+        },
+        {
+            name: "Ломоносовская",
+            href: "lomonosovskaya.html",
+            address: "Бабушкина, 40",
+            title: "Автошкола у м.Ломоносовская",
+            mapSrc: ""
+        },
+        {
+            name: "Метро Рыбацкое",
+            href: "rybackoe.html",
+            address: "Караваевская, 24 к1",
+            title: "Автошкола у м.Рыбацкое",
+            mapSrc: ""
+        },
+        {
+            name: "Ленинский проспект",
+            href: "leninskiy-prospect.html",
+            address: "Ленинский проспект, 129 к6",
+            title: "Автошкола у м.Ленинский проспект",
+            mapSrc: ""
+        },
+        {
+            name: "Кудрово",
+            href: "kudrovo.html",
+            address: "Европейский проспект, 2 ст1",
+            title: "Автошкола у м.Кудрово",
+            mapSrc: ""
+        },
+        {
+            name: "Проспект Ветеранов",
+            href: "prospect-veteranov.html",
+            address: "Ленинский проспект, 128 к2",
+            title: "Автошкола у м.Проспект Ветеранов",
+            mapSrc: ""
+        },
+        {
+            name: "Комендантский Проспект",
+            href: "komendantskiy.html",
+            address: "проспект Авиаконструкторов, 5 к2",
+            title: "Автошкола у м.Комендантский Проспект",
+            mapSrc: ""
+        },
     ].sort((a, b) => a.name.localeCompare(b.name))
 
 //-Карточки "Почему выбирают нас"

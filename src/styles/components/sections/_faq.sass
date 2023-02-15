@@ -1,4 +1,4 @@
-@import src/styles/components/variables
+@import ../variables
 
 #faq-accordion
   margin-top: 50px
@@ -13,7 +13,7 @@
   background: none
   box-shadow: none
   color: $white
-  font-size: 1.6rem
+  font-size: max(1.6rem, 14px)
 
 .accordion-button::after
   content: none
@@ -34,10 +34,9 @@
   transform: rotate(-90deg)
 
 .accordion-body
-  font-size: 1.3rem
+  font-size: max(1.3rem, 12px)
   font-weight: 500
   color: $white
-  line-height: 1.5rem
 
 @media screen and (max-width: $lg)
   .accordion-item

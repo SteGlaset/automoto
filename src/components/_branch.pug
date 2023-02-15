@@ -1,0 +1,69 @@
+extends _base
+
+block variables
+    - prefixUrl = "../index.html"
+    -
+        navLinks = [
+            {
+                name: "Главная",
+                href: `${prefixUrl}#automoto`
+            },
+            {
+                name: "Цены",
+                href: `${prefixUrl}#categories`
+            },
+            {
+                name: "Филиалы",
+                href: `${prefixUrl}#branches`
+            },
+            {
+                name: "Как проходит обучение",
+                href: `${prefixUrl}#auto-stages`
+            },
+            {
+                name: "Отзывы",
+                href: `${prefixUrl}#reviews`
+            },
+            {
+                name: "Акции",
+                href: `${prefixUrl}#events`
+            }
+        ]
+    - branch = {}
+
+block head
+    link(href=require("../styles/components/branches.sass"), rel="stylesheet")
+
+block main
+    section#branch
+        h1.location__title.text-center= branch.title
+        .container
+            ul.d-flex.flex-md-row.flex-column-reverse.p-0
+                li.map.col-md-6.col-12.my-md-0.my-4
+                    iframe(src=branch.mapSrc style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade' width='600' height='450')
+                li.col-md-6.col-12
+                    ul.contacts.d-flex.flex-column.h-100.p-md-4.p-0
+                        li.contacts__li.d-flex.align-items-start
+                            img.contacts__icon(src='../assets/icons/point.svg' alt='')
+                            p.contacts__address= branch.address
+                        li.contacts__li.d-flex.align-items-start
+                            img.contacts__icon(src='../assets/icons/telephone-fill.svg' alt='')
+                            p.contacts__phone
+                                a(href=`tel:${phone.notFormatted}`)= phone.formatted
+                        li.contacts__li.d-flex.align-items-start
+                            img.contacts__icon(src='../assets/icons/envelope-fill.svg' alt='')
+                            p.contacts__mail
+                                a(href=`mailto:${mail}`)= mail
+                        li.contacts__li.d-flex.align-items-start
+                            img.contacts__icon(src='../assets/icons/clock-fill.svg' alt='')
+                            .contacts__schedule.p-0= workTime
+                        li.contacts__li.d-flex.align-items-start.contacts__link-wrapper
+                            .d-flex.justify-content-center
+                                a.link.branches__contact-link(data-bs-toggle='modal' data-bs-target='#formdesignerModal')
+                                    | Оставить заявку
+
+    section#enroll
+        .container
+            h3.text_white.text-center Остались вопросы?
+            p.enroll__description.text-center.text_white Наш менеджер свяжется с Вами через несколько минут
+            +enrollForm('enroll-form')
