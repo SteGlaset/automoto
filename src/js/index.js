@@ -3,7 +3,6 @@ window.onload = () => {
     const sections = [...navLinks].map(link => {
         return document.querySelector('#' + link.getAttribute("href").split('#').at(-1))
     });
-    console.log(sections)
     window.addEventListener("scroll", navHighlighter);
     function navHighlighter () {
         let scrollY = window.scrollY;
