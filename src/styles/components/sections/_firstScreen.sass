@@ -2,6 +2,7 @@
 
 #automoto
   height: calc(100vh - $header-height)
+  min-height: 570px
   position: relative
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 55.21%), url("../../../assets/images/background/automoto-bg.webp") no-repeat center
   background-size: cover
@@ -10,29 +11,34 @@
   .container
     position: relative
 
-  .automoto-subtitle
-    display: block
-    width: 100%
-    position: absolute
-    top: 11px
-    font-size: max(1.4rem, 12px)
-
   .title
     font-family: "Roboto Slab", sans-serif
     margin-block: 60px calc(100px - 3.3rem)
     font-size: 7.4rem
 
-  .automoto__description
-    max-width: 85vw
-    font-size: max(1.6rem, 14px)
-    margin-bottom: 6.4rem
-    margin-inline: auto
+.automoto-subtitle
+  display: block
+  width: 100%
+  position: absolute
+  top: 11px
+  font-size: max(1.7rem, 12px)
 
-  .automoto__li
-    margin-bottom: 21px
+.automoto__description
+  max-width: 85vw
+  font-size: max(1.7rem, 14px)
+  margin-bottom: 6.4rem
+  margin-inline: auto
 
-@media screen and (max-width: $md)
+.automoto__li
+  margin-bottom: 21px
 
+@media screen and (max-width: $sm)
+  #automoto
+    min-height: 350px
+    .title
+      font-family: "Roboto Slab", sans-serif
+      margin-bottom: calc(35px - 3.3rem)
+      font-size: 7.4rem
 
 @media screen and (max-aspect-ratio: 13 / 8)
   #automoto

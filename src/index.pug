@@ -15,11 +15,11 @@ block main
                 .d-flex.flex-column.justify-content-center.h-100
                     h1.title.text-center.text-white АвтоМото
                     ul.automoto__description.text-center.text-white
-                        li.automoto__li Лицензированная автошкола СПб с парком новых иномарок
+                        li.automoto__li.d-none.d-sm-block Лицензированная автошкола СПб с парком новых иномарок
                         li.automoto__li Обучение вождению онлайн и офлайн с полным сопровождением
-                        li.automoto__li Автодромы у метро рядом с домом, профессиональные инструкторы
-                        li.automoto__li Практика для водителей категории Б по маршрутам ГИБДД
-                        li.automoto__li Права за 3 месяца под ключ с беспроцентной рассрочкой за обучение
+                        li.automoto__li.d-none.d-sm-block Автодромы у метро рядом с домом, профессиональные инструкторы
+                        li.automoto__li.d-none.d-sm-block Практика для водителей категории Б по маршрутам ГИБДД
+                        li.automoto__li.d-none.d-sm-block Права за 3 месяца под ключ с беспроцентной рассрочкой за обучение
                     +enrollModal()
         section#categories
             .container
@@ -138,4 +138,4 @@ block main
             .container
                 h3.text_white.text-center Остались вопросы?
                 p.enroll__description.text-center.text_white Наш менеджер свяжется с Вами через несколько минут
-                +enrollForm('enroll-form')
+                +enrollForm(1, 'enroll-form')

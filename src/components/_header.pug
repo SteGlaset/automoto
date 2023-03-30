@@ -11,10 +11,16 @@
                     each link in navLinks
                         li.navigation__link.nav-item(data-bs-dismiss="modal" data-bs-target="#navbarModal" data-bs-toggle="modal")
                             a.nav-link(href=link.href class= link.active ? "active": "")= link.name
+            .modal-footer.justify-content-center
+                a.nav-link.nav-item.social__link(href=`tel:${phone.notFormatted}` title=phone.formatted)
+                    img.social__icon.social__icon_phone(src=require("../assets/icons/telephone-fill.svg"))
+                a.nav-link.nav-item.social__link(href="https://vk.com")
+                    img.social__icon.social__icon_vk(src=require("../assets/icons/vk.svg"))
 header#header
     .container.d-flex.h-100.justify-content-between
-        .col-xl-5.col-4.h-100.d-flex.align-items-center
-            img.header__logo(src=require("../assets/images/logo.webp"), alt="Лого")
+        .col-xl-3.col-2.h-100.d-flex.align-items-center
+            a(href=prefixUrl)
+                img.header__logo(src=require("../assets/images/logo.webp"), alt="Лого")
         nav.navbar.navbar-expand-lg.navbar-light
             button.navbar-toggler(type="button", data-bs-toggle="modal", data-bs-target="#navbarModal", aria-controls="navbarNav", aria-expanded="false", aria-label="Toggle navigation")
                 svg.navbar-svg(width="56" height="26" viewBox="0 0 56 26" fill="none"
@@ -25,3 +31,9 @@ header#header
                 .navbar-nav
                     each link in navLinks
                         a.nav-link.nav-item(href=link.href, class= link.active ? "active" : "")= link.name
+                    a.nav-link.nav-item.social__link(href=`tel:${phone.notFormatted}` title=phone.formatted)
+                        img.social__icon.social__icon_phone.d-block.d-xl-none(src=require("../assets/icons/telephone-fill.svg"))
+                    a.nav-link.nav-item.d-xl-block.d-none(href=`tel:${phone.notFormatted}`)= " " + phone.formatted
+                    a.nav-link.nav-item.social__link(href="https://vk.com")
+                        img.social__icon.social__icon_vk(src=require("../assets/icons/vk.svg"))
+

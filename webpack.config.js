@@ -38,7 +38,7 @@ module.exports = {
             }
         })
     ],
-    mode: 'development',
+    mode: 'production',
     module: {
         rules: [
             {
@@ -64,7 +64,6 @@ module.exports = {
                     filename: 'assets/images/[name].[ext]'
                 }
             },
-
             {
                 test: /\.(woff|woff2|eot|ttf|otf)$/i,
                 type: 'asset/resource',

@@ -59,11 +59,10 @@ block main
                             .contacts__schedule.p-0= workTime
                         li.contacts__li.d-flex.align-items-start.contacts__link-wrapper
                             .d-flex.justify-content-center
-                                a.link.branches__contact-link(data-bs-toggle='modal' data-bs-target='#formdesignerModal')
-                                    | Оставить заявку
+                                +enrollModal('.link.branches__contact-link')
 
     section#enroll
         .container
             h3.text_white.text-center Остались вопросы?
             p.enroll__description.text-center.text_white Наш менеджер свяжется с Вами через несколько минут
-            +enrollForm('enroll-form')
+            +enrollForm(1, 'enroll-form')
