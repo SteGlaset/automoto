@@ -7,8 +7,11 @@ doctype html
 html(lang="ru")
     head
         meta(charset="utf-8")
+        block head_start
         title= title
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(name="description" content=description)
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        link(rel="shortcut icon" href=require("../assets/images/favicon.png") type="image/png")
         link(href=require("../styles/normalize.css"), rel="stylesheet")
         link(href=require("../styles/bootstrap.min.css"), rel="stylesheet")
         link(href=require("../styles/style.sass"), rel="stylesheet")
@@ -16,6 +19,8 @@ html(lang="ru")
         script(src='https://formdesigner.ru/js/roistat/popup.js?v=0.0.3', async)
         block head
     body
+        block body_start
         include _header
         block main
         include _footer
+        block body_end

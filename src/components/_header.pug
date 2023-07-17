@@ -10,7 +10,7 @@
                 ul.navbar-nav.w-100.justify-content-around.align-items-center
                     each link in navLinks
                         li.navigation__link.nav-item(data-bs-dismiss="modal" data-bs-target="#navbarModal" data-bs-toggle="modal")
-                            a.nav-link(href=link.href class= link.active ? "active": "")= link.name
+                            a.nav-link.anchor-link(href=link.href class= link.active ? "active": "")= link.name
             .modal-footer.justify-content-center
                 a.nav-link.nav-item.social__link(href=`tel:${phone.notFormatted}` title=phone.formatted)
                     img.social__icon.social__icon_phone(src=require("../assets/icons/telephone-fill.svg"))
@@ -30,7 +30,7 @@ header#header
             .collapse.navbar-collapse#navbarNav
                 .navbar-nav
                     each link in navLinks
-                        a.nav-link.nav-item(href=link.href, class= link.active ? "active" : "")= link.name
+                        a.nav-link.nav-item.anchor-link(href=link.href, class= link.active ? "active" : "")= link.name
                     a.nav-link.nav-item.social__link(href=`tel:${phone.notFormatted}` title=phone.formatted)
                         img.social__icon.social__icon_phone.d-block.d-xl-none(src=require("../assets/icons/telephone-fill.svg"))
                     a.nav-link.nav-item.d-xl-block.d-none(href=`tel:${phone.notFormatted}`)= " " + phone.formatted
