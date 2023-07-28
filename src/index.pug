@@ -67,6 +67,20 @@ block main
                                         .category__item.category__advantage.text-center= advantage
                                     .category__item.category__price.text-center= category.price
                                 +enrollModal()
+        section#extra-hours
+            .container 
+                h3 Дополнительные занятия по вождению
+                ul.categories__ul.d-flex.justify-content-between.flex-wrap
+                    each extraHour in extraHours
+                        li.categories__li.col-md-6.col-12.mt-5
+                            .category__list
+                                .category__item.category__title.text-center
+                                    h3= extraHour.title
+                                .category__content
+                                    each advantage in extraHour.advantages
+                                        .category__item.category__advantage.text-center= advantage
+                                    .category__item.category__price.text-center= extraHour.price
+                                +enrollModal()
         section#branches
             .container
                 h3 Филиалы автошколы в СПб
