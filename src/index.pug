@@ -15,6 +15,8 @@ block head_start
         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
         })(window,document,'script','dataLayer','GTM-59TXGMR');
     // End Google Tag Manager
+    script(src='https://cdn.proffskills.ru/static/js/autoschool/autoschoolInfoUpdating.js' defer='')
+
 
 block body_start
     // Yandex.Metrika counter
@@ -41,18 +43,21 @@ block body_start
 
 
 block main
+    noscript
+        div(style='color: red; position: fixed; bottom: 5px; left: 5px; z-index: 999')
+            | JavaScript отключен, информация на
+            | сайте может быть неполной
     main#main
         section#automoto
             .container.h-100
                 p.automoto-subtitle.text-center.text-white Автошкола в Санкт-Петербурге
                 .d-flex.flex-column.justify-content-center.h-100
-                    h1.title.text-center.text-white АвтоМото
+                    h2.title.text-center.text-white АвтоМото
                     ul.automoto__description.text-center.text-white
-                        li.automoto__li.d-none.d-sm-block Лицензированная автошкола СПб с парком новых иномарок
-                        li.automoto__li Обучение вождению онлайн и офлайн с полным сопровождением
-                        li.automoto__li.d-none.d-sm-block Автодромы у метро рядом с домом, профессиональные инструкторы
-                        li.automoto__li.d-none.d-sm-block Практика для водителей категории Б по маршрутам ГИБДД
-                        li.automoto__li.d-none.d-sm-block Права за 3 месяца под ключ с беспроцентной рассрочкой за обучение
+                        li.automoto__li
+                            h1 Лучшая автошкола Санкт-Петербурга
+                                br
+                                | с профессиональными инструкторами
                     +enrollModal()
         section#categories
             .container
@@ -65,10 +70,12 @@ block main
                                 .category__content
                                     each advantage in category.advantages
                                         .category__item.category__advantage.text-center= advantage
-                                    .category__item.category__price.text-center= category.price
+                                    .category__item.category__price.text-center
+                                        span.auto-param(data-type='price' data-key=category.key data-format) ...
+                                        | &nbsp;₽
                                 +enrollModal()
         section#extra-hours
-            .container 
+            .container
                 h3 Дополнительные занятия по вождению
                 ul.categories__ul.d-flex.justify-content-between.flex-wrap
                     each extraHour in extraHours
@@ -79,7 +86,9 @@ block main
                                 .category__content
                                     each advantage in extraHour.advantages
                                         .category__item.category__advantage.text-center= advantage
-                                    .category__item.category__price.text-center= extraHour.price
+                                    .category__item.category__price.text-center
+                                        span.auto-param(data-type='overrun' data-key=extraHour.pack data-format) ...
+                                        | &nbsp;₽
                                 +enrollModal()
         section#branches
             .container
